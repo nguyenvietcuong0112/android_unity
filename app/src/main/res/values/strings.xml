@@ -1,0 +1,7 @@
+<resources>
+    <string name="app_name">Boba Tea</string>
+    <string name="game_view_content_description">Game view</string>
+    <string name="select_language">Choose language</string>
+    <string name="this_action_can_contain_ads">This action can contain ads</string>
+
+</resources>

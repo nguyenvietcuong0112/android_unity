@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="black">#FF000000</color>
+    <color name="white">#FFFFFFFF</color>
+    <color name="color_7885F6">#7885F6</color>
+    <color name="colorWhite">#ffffff</color>
+    <color name="color_1590EA">#1590EA</color>
+    <color name="color_F0F2FB">#F0F2FB</color>
+    <color name="transparent">@android:color/transparent</color>
+    <color name="color_0E2E6B">#0E2E6B</color>
+    <color name="color_536279">#536279</color>
+
+</resources>
