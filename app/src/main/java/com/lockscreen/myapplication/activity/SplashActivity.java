@@ -15,14 +15,19 @@ import com.mallegan.ads.util.ConsentHelper;
 
 public class SplashActivity extends AbsBaseActivity {
 
+
+    public  static  boolean isDelayBegin = false;
+
     private ActivitySplashBinding binding;
     private InterCallback interCallback;
 
     @Override
     public void bind() {
+
         SystemUtil.setLocale(this);
         binding = ActivitySplashBinding.inflate(getLayoutInflater());
         setContentView(binding.getRoot());
+        isDelayBegin = false;
         loadAds();
     }
 
@@ -68,7 +73,7 @@ public class SplashActivity extends AbsBaseActivity {
         }
         consentHelper.obtainConsentAndShow(this, () -> {
             Admob.getInstance().loadSplashInterAds2(SplashActivity.this, getString(R.string.inter_splash), 3000, interCallback);
-      });
+        });
     }
 
 

@@ -6,6 +6,7 @@ import android.content.Intent;
 import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.os.Handler;
+import android.os.Looper;
 import android.util.Log;
 import android.view.View;
 import android.widget.ImageView;
@@ -30,7 +31,7 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
         sharedPreferences = getSharedPreferences(PREF_NAME, MODE_PRIVATE);
-        sound = getSoundPreference(); // Lấy giá trị sound từ SharedPreferences
+        sound = getSoundPreference();
 
         ImageView play = findViewById(R.id.play_play);
         ImageView playOrder = findViewById(R.id.play_order_now);
@@ -41,14 +42,13 @@ public class MainActivity extends AppCompatActivity {
         ReciverMessageFromUnity.callbackManager = new CallbackManager();
 
         ReciverMessageFromUnity.callbackManager.setCallback(message -> {
-            System.out.println("aasbawtqwtqwt:$" + message);
             switch (message) {
                 case "back":
-                    UnityPlayer.UnitySendMessage("FlutterAndUnityManager", "OnOFFSound", String.valueOf(sound));
+                    SplashActivity.isDelayBegin = true;
                     getSoundPreference();
-                    Intent intent = new Intent(MainActivity.this, MainActivity.class);
+                    UnityPlayer.UnitySendMessage("FlutterAndUnityManager", "OnOFFSound", String.valueOf(sound));
+                    Intent intent = new Intent(ReciverMessageFromUnity.GetCOntext(), MainActivity.class);
                     startActivity(intent);
-
                     break;
                 case "showAds_inter_default":
                     UnityPlayer.UnitySendMessage("AdsFlutterAndUnityManager", "OnReciverCallbackAdsInter", "showAds_default_true");
@@ -64,35 +64,60 @@ public class MainActivity extends AppCompatActivity {
                     Log.d("MessageHandler", "Unknown message: " + message);
                     break;
             }
-//            if ("back".equals(message)) {
-//                Intent intent = new Intent(MainActivity.this, MainActivity.class);
-//                startActivity(intent);
-//            } else if("showAds_inter_default".equals(message)){
-//                UnityPlayer.UnitySendMessage("AdsFlutterAndUnityManager", "OnReciverCallbackAdsInter", "showAds_default_false");
-//
-//            } else if("showAds_inter_reciver_item".equals(message)){
-//                UnityPlayer.UnitySendMessage("AdsFlutterAndUnityManager", "OnReciverCallbackAdsInter", "showAds_reciver_item_false");
-//            }
         });
         play.setOnClickListener(new View.OnClickListener() {
             public void onClick(View v) {
-                UnityPlayer.UnitySendMessage("FlutterAndUnityManager", "OnPlayGame", "play");
-                UnityPlayer.UnitySendMessage("FlutterAndUnityManager", "OnOFFSound", String.valueOf(sound));
                 openUnityActivity();
+                if (!SplashActivity.isDelayBegin) {
+                    SplashActivity.isDelayBegin = true;
+                    new Handler(Looper.getMainLooper()).postDelayed(new Runnable() {
+                        @Override
+                        public void run() {
+                            UnityPlayer.UnitySendMessage("FlutterAndUnityManager", "OnPlayGame", "play");
+                            UnityPlayer.UnitySendMessage("FlutterAndUnityManager", "OnOFFSound", String.valueOf(sound));
+                        }
+                    }, 2000); // 2000ms = 2 giây
+                } else {
+                    UnityPlayer.UnitySendMessage("FlutterAndUnityManager", "OnPlayGame", "play");
+                    UnityPlayer.UnitySendMessage("FlutterAndUnityManager", "OnOFFSound", String.valueOf(sound));
+                }
             }
         });
         playOrder.setOnClickListener(new View.OnClickListener() {
+
             public void onClick(View v) {
-                UnityPlayer.UnitySendMessage("FlutterAndUnityManager", "OnPlayGame", "drink");
-                UnityPlayer.UnitySendMessage("FlutterAndUnityManager", "OnOFFSound", String.valueOf(sound));
                 openUnityActivity();
+                if (!SplashActivity.isDelayBegin) {
+                    SplashActivity.isDelayBegin = true;
+                    new Handler(Looper.getMainLooper()).postDelayed(new Runnable() {
+                        @Override
+                        public void run() {
+                            UnityPlayer.UnitySendMessage("FlutterAndUnityManager", "OnPlayGame", "drink");
+                            UnityPlayer.UnitySendMessage("FlutterAndUnityManager", "OnOFFSound", String.valueOf(sound));
+                        }
+                    }, 2000); // 2000ms = 2 giây
+                } else {
+                    UnityPlayer.UnitySendMessage("FlutterAndUnityManager", "OnPlayGame", "drink");
+                    UnityPlayer.UnitySendMessage("FlutterAndUnityManager", "OnOFFSound", String.valueOf(sound));
+                }
             }
         });
         playFill.setOnClickListener(new View.OnClickListener() {
             public void onClick(View v) {
-                UnityPlayer.UnitySendMessage("FlutterAndUnityManager", "OnPlayGame", "buffet");
-                UnityPlayer.UnitySendMessage("FlutterAndUnityManager", "OnOFFSound", String.valueOf(sound));
                 openUnityActivity();
+                if (!SplashActivity.isDelayBegin) {
+                    SplashActivity.isDelayBegin = true;
+                    new Handler(Looper.getMainLooper()).postDelayed(new Runnable() {
+                        @Override
+                        public void run() {
+                            UnityPlayer.UnitySendMessage("FlutterAndUnityManager", "OnPlayGame", "buffet");
+                            UnityPlayer.UnitySendMessage("FlutterAndUnityManager", "OnOFFSound", String.valueOf(sound));
+                        }
+                    }, 2000);
+                } else {
+                    UnityPlayer.UnitySendMessage("FlutterAndUnityManager", "OnPlayGame", "buffet");
+                    UnityPlayer.UnitySendMessage("FlutterAndUnityManager", "OnOFFSound", String.valueOf(sound));
+                }
             }
         });
 
@@ -126,6 +151,7 @@ public class MainActivity extends AppCompatActivity {
             }
         });
     }
+
     private void openUnityActivity() {
         Intent intent = new Intent(MainActivity.this, UnityPlayerActivity.class);
         startActivity(intent);
