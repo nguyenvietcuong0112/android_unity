@@ -5,10 +5,10 @@
     <data>
         <variable
             name="language"
-            type="com.lockscreen.myapplication.model.LanguageModel" />
+            type="com.boba.drink.tea.drinkgame.bubble.tasty.model.LanguageModel" />
         <variable
             name="clickListener"
-            type="com.lockscreen.myapplication.adapter.LanguageAdapter.IClickLanguage" />
+            type="com.boba.drink.tea.drinkgame.bubble.tasty.adapter.LanguageAdapter.IClickLanguage" />
 
         <import type="android.view.View" />
 

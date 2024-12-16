@@ -1,4 +1,4 @@
-package com.lockscreen.myapplication.adapter;
+package com.boba.drink.tea.drinkgame.bubble.tasty.adapter;
 
 
 import android.content.Context;
@@ -13,9 +13,9 @@ import androidx.annotation.RequiresApi;
 
 import androidx.recyclerview.widget.RecyclerView;
 
-import com.lockscreen.myapplication.databinding.ItemLanguageHandBinding;
-import com.lockscreen.myapplication.model.LanguageHandModel;
-import com.lockscreen.myapplication.R;
+import com.boba.drink.tea.drinkgame.bubble.tasty.databinding.ItemLanguageHandBinding;
+import com.boba.drink.tea.drinkgame.bubble.tasty.model.LanguageHandModel;
+import com.boba.drink.tea.drinkgame.bubble.tasty.R;
 
 import java.util.List;
 

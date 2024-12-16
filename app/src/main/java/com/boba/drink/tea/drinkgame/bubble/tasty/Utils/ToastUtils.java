@@ -1,4 +1,4 @@
-package com.lockscreen.myapplication.Utils;
+package com.boba.drink.tea.drinkgame.bubble.tasty.Utils;
 
 import android.content.Context;
 import android.widget.Toast;

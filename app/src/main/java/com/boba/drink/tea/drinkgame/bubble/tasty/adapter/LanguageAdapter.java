@@ -1,4 +1,4 @@
-package com.lockscreen.myapplication.adapter;
+package com.boba.drink.tea.drinkgame.bubble.tasty.adapter;
 
 import android.annotation.SuppressLint;
 import android.view.LayoutInflater;
@@ -9,9 +9,9 @@ import androidx.databinding.DataBindingUtil;
 import androidx.recyclerview.widget.RecyclerView;
 
 
-import com.lockscreen.myapplication.databinding.ItemLanguageBinding;
-import com.lockscreen.myapplication.model.LanguageModel;
-import com.lockscreen.myapplication.R;
+import com.boba.drink.tea.drinkgame.bubble.tasty.databinding.ItemLanguageBinding;
+import com.boba.drink.tea.drinkgame.bubble.tasty.model.LanguageModel;
+import com.boba.drink.tea.drinkgame.bubble.tasty.R;
 
 import java.util.List;
 

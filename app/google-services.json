@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "1005906876472",
+    "project_id": "trg02b-boba-tea",
+    "storage_bucket": "trg02b-boba-tea.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:1005906876472:android:557ea630c2d5125bceaecd",
+        "android_client_info": {
+          "package_name": "com.boba.drink.tea.drinkgame.bubble.tasty"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAMu_ILzb_GpsGessdICsbG3Xx3-jFC1go"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

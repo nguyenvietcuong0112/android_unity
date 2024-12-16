@@ -3,11 +3,11 @@ plugins {
 }
 
 android {
-    namespace 'com.lockscreen.myapplication'
+    namespace 'com.boba.drink.tea.drinkgame.bubble.tasty'
     compileSdk 34
 
     defaultConfig {
-        applicationId "com.lockscreen.myapplication"
+        applicationId "com.boba.drink.tea.drinkgame.bubble.tasty"
         minSdk 24
         targetSdk 34
         versionCode 100

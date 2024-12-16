@@ -1,16 +1,20 @@
-package com.lockscreen.myapplication.activity;
+package com.boba.drink.tea.drinkgame.bubble.tasty.activity;
 
 import android.content.Intent;
 
 
-import com.lockscreen.myapplication.R;
-import com.lockscreen.myapplication.Utils.SystemUtil;
-import com.lockscreen.myapplication.base.AbsBaseActivity;
-import com.lockscreen.myapplication.databinding.ActivitySplashBinding;
+import com.appsflyer.AppsFlyerConversionListener;
+import com.appsflyer.AppsFlyerLib;
+import com.boba.drink.tea.drinkgame.bubble.tasty.R;
+import com.boba.drink.tea.drinkgame.bubble.tasty.Utils.SharePreferenceUtils;
+import com.boba.drink.tea.drinkgame.bubble.tasty.Utils.SystemUtil;
+import com.boba.drink.tea.drinkgame.bubble.tasty.base.AbsBaseActivity;
+import com.boba.drink.tea.drinkgame.bubble.tasty.databinding.ActivitySplashBinding;
 import com.mallegan.ads.callback.InterCallback;
 import com.mallegan.ads.util.Admob;
 import com.mallegan.ads.util.ConsentHelper;
 
+import java.util.Map;
 
 
 public class SplashActivity extends AbsBaseActivity {
@@ -41,7 +45,7 @@ public class SplashActivity extends AbsBaseActivity {
                 finish();
             }
         };
-/*        if (SharePreferenceUtils.isOrganic(this)) {
+      if (SharePreferenceUtils.isOrganic(this)) {
             AppsFlyerLib.getInstance().registerConversionListener(this, new AppsFlyerConversionListener() {
 
                 @Override
@@ -65,7 +69,7 @@ public class SplashActivity extends AbsBaseActivity {
                     // Handle attribution failure
                 }
             });
-        }*/
+        }
 
         ConsentHelper consentHelper = ConsentHelper.getInstance(this);
         if (!consentHelper.canLoadAndShowAds()) {

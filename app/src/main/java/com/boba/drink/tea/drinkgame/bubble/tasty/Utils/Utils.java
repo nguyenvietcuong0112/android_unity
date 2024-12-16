@@ -1,4 +1,4 @@
-package com.lockscreen.myapplication.Utils;
+package com.boba.drink.tea.drinkgame.bubble.tasty.Utils;
 
 import android.Manifest;
 import android.app.Activity;
@@ -17,9 +17,9 @@ import androidx.core.app.ActivityCompat;
 import androidx.core.content.ContextCompat;
 
 
-import com.lockscreen.myapplication.model.LanguageHandModel;
-import com.lockscreen.myapplication.model.LanguageModel;
-import com.lockscreen.myapplication.R;
+import com.boba.drink.tea.drinkgame.bubble.tasty.model.LanguageHandModel;
+import com.boba.drink.tea.drinkgame.bubble.tasty.model.LanguageModel;
+import com.boba.drink.tea.drinkgame.bubble.tasty.R;
 
 import java.io.ByteArrayOutputStream;
 import java.io.File;

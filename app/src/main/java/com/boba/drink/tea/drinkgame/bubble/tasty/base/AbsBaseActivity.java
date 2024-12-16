@@ -1,4 +1,4 @@
-package com.lockscreen.myapplication.base;
+package com.boba.drink.tea.drinkgame.bubble.tasty.base;
 
 import android.os.Build;
 import android.os.Bundle;

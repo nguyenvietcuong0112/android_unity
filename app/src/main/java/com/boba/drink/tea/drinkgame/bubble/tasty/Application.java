@@ -1,12 +1,13 @@
-package com.lockscreen.myapplication;
+package com.boba.drink.tea.drinkgame.bubble.tasty;
 
 import com.appsflyer.AppsFlyerConversionListener;
 
 import com.facebook.FacebookSdk;
 import com.google.firebase.FirebaseApp;
-import com.lockscreen.myapplication.Utils.SharePreferenceUtils;
-import com.lockscreen.myapplication.activity.LanguageActivity;
-import com.lockscreen.myapplication.activity.SplashActivity;
+import com.boba.drink.tea.drinkgame.bubble.tasty.Utils.SharePreferenceUtils;
+import com.boba.drink.tea.drinkgame.bubble.tasty.activity.LanguageActivity;
+import com.boba.drink.tea.drinkgame.bubble.tasty.activity.SplashActivity;
+import com.boba.drink.tea.drinkgame.bubble.tasty.R;
 import com.mallegan.ads.util.AdsApplication;
 import com.mallegan.ads.util.AppOpenManager;
 import com.mallegan.ads.util.AppsFlyer;

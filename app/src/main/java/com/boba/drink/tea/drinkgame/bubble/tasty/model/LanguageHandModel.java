@@ -1,4 +1,4 @@
-package com.lockscreen.myapplication.model;
+package com.boba.drink.tea.drinkgame.bubble.tasty.model;
 
 public class LanguageHandModel {
     public String languageName;
